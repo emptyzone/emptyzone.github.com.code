@@ -28,7 +28,7 @@ author :
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 production_url : http://emptyzone.github.com
-feed_url: http://emptyzone.github.com/feed.xml
+feed_url: http://feed.feedsky.com/gappry
 
 description : Gary_Blog
 keywords : Gary,Blog

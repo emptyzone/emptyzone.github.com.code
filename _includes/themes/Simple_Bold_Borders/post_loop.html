@@ -1,0 +1,29 @@
+{% for post in loop_posts %}
+<div class="hentry">
+	<h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+	<div class="date-container"><span class="date">{{ post.date | date_to_string }}</span></div>
+	<div class="postContent">{{ post.content | truncate : 500 }}</div>
+	<div class="postInfo">
+		{% capture post_categories %}
+			{% if post.categories != empty %}
+				{% assign category = post.categories[0] %}
+				<a href="{{ site.category_dir }}{{ category}}" rel="category" >{{ category }}</a>
+			{% endif %}
+		{% endcapture %}
+		{% capture post_tags %}
+			{% if post.tags != empty %}
+				/ Tags: {{ post.tags | tag_links }}
+			{% endif %}
+		{% endcapture %}
+		{% if post_categories != "" || post_tags != "" %}
+			<div class="postTags">
+				分类: {{ post_categories }}  {{ post_tags }}
+			</div>	
+		{% endif %}
+			<div class="postNotes"><a href="{{ post.url }}#disqus_thread">0 Comments</a></div>
+			<div class="clear"></div>
+		{% assign post_categories = "" %}
+		{% assign post_tags = "" %}
+	</div>
+</div>
+{% endfor %}

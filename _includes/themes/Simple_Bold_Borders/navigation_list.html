@@ -1,0 +1,22 @@
+{% assign group = 'navigation' %}
+{% assign categories_list = site.categories %}
+<ul>
+ {% if categories_list.first[0] == null %}
+    {% for category in categories_list %}
+		{% if page.category == category %}
+			<li class="menu-item current-menu-item"><a href="{{ site.category_dir }}{{ category }}" rel="category" >{{ category }}</a></li>
+		{% else %}
+			<li class="menu-item"><a href="{{ site.category_dir }}{{ category }}" rel="category" >{{ category }}</a></li>
+		{% endif %}
+    {% endfor %}
+  {% else %}
+    {% for category in categories_list %} 
+		{% if page.category == category[0] %}
+			<li class="menu-item current-menu-item"><a href="{{ site.category_dir }}{{ category[0]}}" rel="category" >{{ category[0] }}</a></li>
+		{% else %}
+			<li class="menu-item"><a href="{{ site.category_dir }}{{ category[0]}}" rel="category" >{{ category[0] }}</a></li>
+		{% endif %}
+	{% endfor %}
+  {% endif %}
+  <li class="menu-item"><a href="{{ site.feed_url }}" target="_blank">订阅</a></li>
+</ul>

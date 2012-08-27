@@ -1,0 +1,10 @@
+<div id="posts">
+	<div class="hentry">
+		<div class="postContent">
+			<h2>Tag: {{ page.title }}</h2>
+		</div>
+	</div>
+	{% assign loop_posts =  site.tags[page.tag] %}
+		{%  include themes/Simple_Bold_Borders/post_loop.html %}
+	{% assign loop_posts =  null %}
+</div>

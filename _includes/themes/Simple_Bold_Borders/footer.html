@@ -1,0 +1,19 @@
+	</div>
+	<div id="footer" class="clear">
+		<div class="credits">
+			Powered by <a href="http://jekyllrb.com/" target="_blank">jekyll</a>, 
+			Updated {{site.time | date_to_string }}
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	if($('.postContent a[rel!=link]:has(img)').length > 0){
+		$.getScript("{{ ASSET_PATH }}/js/slimbox2.js");
+	};
+});
+</script>
+</body>
+</html>

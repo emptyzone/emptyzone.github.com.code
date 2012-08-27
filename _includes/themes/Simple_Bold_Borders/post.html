@@ -1,0 +1,29 @@
+<div id="posts">
+	<div class="hentry">
+		<h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+		<div class="date-container"><span class="date">{{ page.date | date_to_string }}</span></div>
+		<div class="postContent">{{ content }}</div>
+		{% capture post_categories %}
+			{% if page.categories != empty %}
+				{% assign category = page.categories[0] %}
+				<a href="{{ site.category_dir }}{{ category}}" rel="category" >{{ category }}</a>
+			{% endif %}
+		{% endcapture %}
+		{% capture post_tags %}
+			{% if page.tags != empty %}
+				/ Tags: {{ page.tags | tag_links }}
+			{% endif %}
+		{% endcapture %}
+		{% if post_categories != "" || post_tags != "" %}
+			<div class="postInfo">
+				<div class="postTags">
+					分类: {{ post_categories }}  {{ post_tags }}
+				</div>
+				<div class="clear"></div>
+			</div>
+		{% endif %}
+		{% assign post_categories = "" %}
+		{% assign post_tags = "" %}
+	</div>
+</div>
+{% include themes/Simple_Bold_Borders/commens.html %}

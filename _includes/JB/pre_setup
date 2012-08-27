@@ -1,0 +1,29 @@
+ {% if site.safe and site.JB.BASE_PATH and site.JB.BASE_PATH != '' %}
+    {% assign BASE_PATH = site.JB.BASE_PATH %}
+    {% assign HOME_PATH = site.JB.BASE_PATH %}
+ {% else %}
+    {% assign BASE_PATH = nil %}
+    {% assign HOME_PATH = "/" %}
+ {% endif %}
+ {% if site.JB.ASSET_PATH %}
+    {% assign ASSET_PATH = site.JB.ASSET_PATH %}
+ {% else %}
+    {% if page.theme.name %}
+      {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ page.theme.name }}{% endcapture %}
+	{% else %}
+	  {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ site.JB.theme.name }}{% endcapture %}
+	{% endif %}
+ {% endif %}
+ {% if page.url == "/index.html" %}
+	{% assign DESCRIPTION = site.description %}
+	{% assign KEYWORDS = site.keywords %}
+ {% else %}
+    {% assign DESCRIPTION = page.description %}
+	{% capture KEYWORDS %}
+	  {% for tag in page.tags %}
+	    {% if tag != null%}
+			{{ tag }},
+		{% endif%}
+	  {% endfor%}
+	{% endcapture%}
+ {% endif %}

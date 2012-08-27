@@ -1,12 +1,13 @@
 # This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:categories/:year/:month/:day/:title/ 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 safe: false
 pygments: true
 paginate: 5
+server : true
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -36,9 +37,8 @@ category_dir : /
 category_title_prefix : ''
 category_meta_description_prefix : ''
 
-tag_dir : tags/
-tag_title_prefix: ''
-tag_meta_description_prefix : ''
+tag_page_layout : tag_index
+tag_page_dir : tags
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :

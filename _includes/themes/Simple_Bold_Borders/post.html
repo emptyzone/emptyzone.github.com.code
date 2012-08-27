@@ -11,7 +11,7 @@
 		{% endcapture %}
 		{% capture post_tags %}
 			{% if page.tags != empty %}
-				/ Tags: {{ page.tags | tag_links }}
+				| Tags: {{ page | tags }}
 			{% endif %}
 		{% endcapture %}
 		{% if post_categories != "" || post_tags != "" %}

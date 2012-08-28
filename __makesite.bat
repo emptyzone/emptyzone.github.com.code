@@ -1,0 +1,1 @@
+jekyll --no-auto 'E:\Documents\GitHub\emptyzone.github.com'

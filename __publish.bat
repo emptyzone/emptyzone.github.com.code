@@ -11,3 +11,5 @@ cd E:\Documents\GitHub\emptyzone.github.com
 move "../_backup" ".git"
 attrib +h ".git"
 echo > .nojekyll
+cd ../emptyzone.github.com.code
+call __pushsite.bat

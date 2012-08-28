@@ -12,12 +12,12 @@
 		{% endcapture %}
 		{% capture post_tags %}
 			{% if post.tags != empty %}
-				| Tags: {{ post | tags }}
+				| {{ post | tags }}
 			{% endif %}
 		{% endcapture %}
 		{% if post_categories != "" || post_tags != "" %}
 			<div class="postTags">
-				分类: {{ post_categories }}  {{ post_tags }}
+				{{ post_categories }}  {{ post_tags }}
 			</div>	
 		{% endif %}
 			<div class="postNotes"><a href="{{ post.url }}#disqus_thread">Loading...</a></div>

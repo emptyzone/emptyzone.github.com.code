@@ -11,19 +11,19 @@
 		{% endcapture %}
 		{% capture post_tags %}
 			{% if page.tags != empty %}
-				| Tags: {{ page | tags }}
+				| {{ page | tags }}
 			{% endif %}
 		{% endcapture %}
 		{% if post_categories != "" || post_tags != "" %}
 			<div class="postInfo">
 				<div class="postTags">
-					分类: {{ post_categories }}  {{ post_tags }}
+					{{ post_categories }}  {{ post_tags }}
 				</div>
 				<div class="clear"></div>
 			</div>
 		{% endif %}
 		{% assign post_categories = "" %}
 		{% assign post_tags = "" %}
+		{% include themes/Simple_Bold_Borders/commens.html %}
 	</div>
 </div>
-{% include themes/Simple_Bold_Borders/commens.html %}

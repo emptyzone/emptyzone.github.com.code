@@ -2,7 +2,7 @@
 <div class="hentry">
 	<h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
 	<div class="date-container"><span class="date">{{ post.date | date_to_string }}</span></div>
-	<div class="postContent">{{ post.content | truncate : 250 }}</div>
+	<div class="postContent">{{ post.content | truncatehtml : 200 }}</div>
 	<div class="postInfo">
 		{% capture post_categories %}
 			{% if post.categories != empty %}

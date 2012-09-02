@@ -13,6 +13,7 @@ jQuery(document).ready(function($){
 });
 
 function afterLoaded(){
+	var bodyHeight = 
 	bindSlimBox();
 	$.getScript('http://garyblog.disqus.com/embed.js',function(data){eval(data);});
 	$.getScript('http://garyblog.disqus.com/count.js',function(data){eval(data);});
@@ -57,8 +58,8 @@ function loadData(url,toPush){
 	$.ajax({
 		url:url,
 		beforeSend:function(jqXHR, settings){
-			scrollToTop();
 			$('#content').fadeTo(500,0.3);
+			scrollToTop();
 		},
 		complete:function(){
 			$('#content').fadeTo(200,1);
@@ -98,5 +99,5 @@ function caculateCategory(category){
 }
 
 function scrollToTop(){
-	$body.animate({scrollTop: $('#container').offset().top - 40},600);
+	$body.animate({scrollTop: 0},600);
 }

@@ -58,7 +58,6 @@ body,input,textarea,select,button,code,blockquote {
 
 body {
     background: url(../bg/1.jpg) no-repeat fixed 0 0 #EFEFEF;
-	background-size:cover;
     color: #727272;
 }
 
@@ -238,6 +237,14 @@ a:hover {
 	}
   } 
 @media only screen and (max-width:480px){ 
+	html{
+		height: 100%; 
+		overflow: hidden; 
+	}
+	body{
+		height: 100%; 
+		overflow: scroll;
+	}
 	#container{
 		width:100%;
 		min-width:320px;

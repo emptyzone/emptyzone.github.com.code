@@ -74,6 +74,7 @@ module Jekyll
       super(site, base, dir, 'index.html')
 
       self.data['tag'] = name
+	  self.data['title'] = name
     end
 
     def read_yaml(_, __)

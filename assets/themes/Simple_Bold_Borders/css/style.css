@@ -58,6 +58,7 @@ body,input,textarea,select,button,code,blockquote {
 
 body {
     background: url(../bg/1.jpg) no-repeat fixed 0 0 #EFEFEF;
+	background-size:cover;
     color: #727272;
 }
 
@@ -89,7 +90,6 @@ a:hover {
 #container {
     margin: 40px auto;
 	margin-bottom: 5px;
-    padding: 0 14px;
     width: 700px;
 }
 
@@ -116,7 +116,10 @@ a:hover {
 	-webkit-animation-duration: 4s;
 	-webkit-animation-iteration-count: infinite;
 }
-
+#header span.title:nth-child(2){
+	margin-left:65px;
+	margin-top:-40px;
+}
 
 #header span.title:hover {
 	-webkit-animation-name: titleHover;
@@ -190,7 +193,63 @@ a:hover {
 	float : right;
 	width : 480px;
 }
+ @media only screen and (max-width:700px){
+	#container{
+		width:100%;
+		min-width:480px;
+		max-width:600px;
+    }
+	#header{
+		width: 95%;
+		margin:0 auto;
+		float:none;
+		position:static;
+	}
+	#content{
+		float:none;
+		width:95%;
+		margin: 30px auto 0 auto;
+	}
+	
+	#header span.title {
+		display:inline-block;
+		width:70px;
+		height:70px;
+		font-size: 20px;
+		line-height:70px;
+	}
+	#header span.title:nth-child(2){
+		margin-left:-15px;
+		margin-top:0;
+	}
+	#header #nav {
+		margin-right:0;
+	}
+	#header #nav ul li.menu-item{
+		display:inline-block;
+	}
+	
+	#header #nav ul li.menu-item a{
+		display:inline-block;
+		margin-top:3px;
+		width:40px;
+		height:40px;
+		line-height:40px;
+	}
+  } 
+@media only screen and (max-width:480px){ 
+	#container{
+		width:100%;
+		min-width:320px;
+    }
 
+	#header{
+		width:97%;
+	}
+	#content{
+		width:97%;
+	}
+ } 
 .post {
     background-color: rgba(255,255,255,0.8);
     margin-bottom: 30px;

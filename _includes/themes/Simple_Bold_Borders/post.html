@@ -4,6 +4,7 @@
 	<h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
 	<div class="date">{{ page.date | date_to_string }}</div>
 	<div class="postContent">{{ content }}</div>
+	<div class="ujian-hook"></div>
 	{% capture post_categories %}
 		{% if page.categories != empty %}
 			{% assign category = page.categories[0] %}

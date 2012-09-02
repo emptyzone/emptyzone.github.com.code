@@ -1,14 +1,22 @@
 var pjaxBinded = false;
 var disqus_shortname = 'garyblog';
+var ujian_config = {showType:0};
+var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 jQuery(document).ready(function($){
+	if ($.browser.msie) {
+		location.href = 'http://chrome.google.com';
+	}
 	afterLoaded();
-	bindPjax();
+	if( history && history.pushState){
+		bindPjax();
+	}
 });
 
 function afterLoaded(){
 	bindSlimBox();
 	$.getScript('http://garyblog.disqus.com/embed.js',function(data){eval(data);});
 	$.getScript('http://garyblog.disqus.com/count.js',function(data){eval(data);});
+	$.getScript('http://v1.ujian.cc/code/ujian.js?uid=97713',function(data){eval(data);});
 }
 
 function bindSlimBox(){
@@ -49,7 +57,8 @@ function loadData(url,toPush){
 	$.ajax({
 		url:url,
 		beforeSend:function(jqXHR, settings){
-			$('#content').fadeTo(300,0.3);
+			scrollToTop();
+			$('#content').fadeTo(500,0.3);
 		},
 		complete:function(){
 			$('#content').fadeTo(200,1);
@@ -61,12 +70,12 @@ function loadData(url,toPush){
 			var content = data.find('#content').html();
 			caculateCategory(category);
 			$('#content').html(content);
-			$('#content').fadeTo(200,1);
+			$('#content').fadeTo(500,1);
 			if(toPush){
 				window.history.pushState(null, title, url);
 			}
-			afterLoaded();
 			document.title = title;
+			afterLoaded();
 			if(!pjaxBinded){
 				pjaxBinded = true;
 				$(window).bind('popstate', function(e){
@@ -86,4 +95,8 @@ function caculateCategory(category){
 			$(item).removeClass('current-menu-item');
 		}
 	});
+}
+
+function scrollToTop(){
+	$body.animate({scrollTop: $('#container').offset().top - 40},600);
 }

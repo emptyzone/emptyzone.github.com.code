@@ -1,10 +1,9 @@
-<div id="posts">
-	<div class="hentry">
-		<div class="postContent">
-			<h2>Tag: {{ page.tag }}</h2>
-		</div>
+
+<div class="post">
+	<div class="postContent">
+		<h2>Tag: {{ page.tag }}</h2>
 	</div>
-	{% assign loop_posts =  page.posts %}
-		{%  include themes/Simple_Bold_Borders/post_loop.html %}
-	{% assign loop_posts =  null %}
 </div>
+{% assign loop_posts =  page.posts %}
+	{%  include themes/Simple_Bold_Borders/post_loop.html %}
+{% assign loop_posts =  null %}

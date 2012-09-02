@@ -13,7 +13,13 @@
 <body>
 <div id="container">
 	<div id="header">
-		<h1><a href="{{ HOME_PATH }}" title="{{ site.title }}">{{ site.title }}</a></h1>
+		<a class="title" href="{{ HOME_PATH }}" title="{{ site.title }}">
+			{% assign margin = 0 %}
+			{% for s in site.titles  %}
+				<span style="margin-left:{{margin}}px;{% if margin > 0%}margin-top:-40px{% endif %}" class="title">{{s}}</span>
+				{% assign margin = margin | plus:65 %}
+			{% endfor %}
+		</a>
 		<div id="nav">
 			{% include themes/Simple_Bold_Borders/navigation_list.html %}
 		</div>

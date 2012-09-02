@@ -8,12 +8,7 @@
 </div>
 
 <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($){
-	if($('.postContent a[rel!=link]:has(img)').length > 0){
-		$.getScript("{{ ASSET_PATH }}/js/slimbox2.js");
-	};
-});
-</script>
+<script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.pjax.js"></script>
+<script type="text/javascript" src="{{ ASSET_PATH }}/js/base.js"></script>
 </body>
 </html>

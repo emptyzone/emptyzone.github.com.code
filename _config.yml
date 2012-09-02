@@ -13,6 +13,8 @@ server : false
 # so be sure to set them if your theme uses them.
 #
 title : Gary Blog
+titles : [Gary, Blog]
+
 tagline: 这世界诉说着伟大的梦，有残缺的口
 
 author :

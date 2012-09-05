@@ -5,10 +5,12 @@ permalink: /:categories/:year/:month/:day/:title/
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "__clean.bat", "__publish.bat", "__run.bat", "__makesite.bat", "__pushsite.bat"]
 auto: true
 safe: false
-pygments: true
+pygments: false
+markdown: kramdown
 paginate: 5
 server : false
-
+kramdown:
+  use_coderay: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #

@@ -5,14 +5,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta charset="UTF-8">
 <title>{{ site.title }}{% if page.url != "/index.html" %} | {{page.title}} {% endif %}</title>
-<meta name="description" content={{ DESCRIPTION }} />
-<meta name="keywords" content={{ KEYWORDS }} />
+{% if DESCRIPTION %}
+<meta name="description" content="{{ DESCRIPTION }}" />
+{% endif %}
+{% if KEYWORDS %}
+<meta name="keywords" content="{{ KEYWORDS }}" />
+{% endif %}
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,maximum-scale=1.0,user-scalable=no">
 <link rel="stylesheet" href="{{ ASSET_PATH}}/css/style.css" type="text/css" media="screen" />
 <link rel="alternate" type="application/rss+xml" title="feed" href={{ site.feed_url }}/>
 </head>
 
 <body>
+<div id="background"></div>
 <div id="container">
 	<div id="header">
 		<a class="title" href="{{ HOME_PATH }}" title="{{ site.title }}">

@@ -13,7 +13,6 @@ jQuery(document).ready(function($){
 });
 
 function afterLoaded(){
-	var bodyHeight = 
 	bindSlimBox();
 	$.getScript('http://garyblog.disqus.com/embed.js',function(data){eval(data);});
 	$.getScript('http://garyblog.disqus.com/count.js',function(data){eval(data);});
@@ -27,7 +26,7 @@ function bindSlimBox(){
 }
 
 function bindPjax(){
-	$('a').live('click',function(event){
+	$('a[target!=_blank]').live('click',function(event){
 		var link = event.currentTarget;
 		var url = link.href;
 		// Middle click, cmd click, and ctrl click should open
@@ -60,9 +59,11 @@ function loadData(url,toPush){
 		beforeSend:function(jqXHR, settings){
 			$('#content').fadeTo(500,0.3);
 			scrollToTop();
+			$('#header span.title').addClass('rotate');
 		},
 		complete:function(){
 			$('#content').fadeTo(200,1);
+			$('#header span.rotate').removeClass('rotate');
 		},
 		success:function(data){
 			data = $(data);
@@ -72,10 +73,10 @@ function loadData(url,toPush){
 			caculateCategory(category);
 			$('#content').html(content);
 			$('#content').fadeTo(500,1);
+			document.title = title;
 			if(toPush){
 				window.history.pushState(null, title, url);
 			}
-			document.title = title;
 			afterLoaded();
 			if(!pjaxBinded){
 				pjaxBinded = true;

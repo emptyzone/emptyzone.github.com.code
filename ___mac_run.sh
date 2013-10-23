@@ -7,4 +7,4 @@
 #
 cd $(dirname $0)
 rm -f "_site"
-jekyll serve
+jekyll serve -w

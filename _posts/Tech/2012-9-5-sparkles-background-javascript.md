@@ -8,7 +8,6 @@ tags: [Javascript, 前端]
 
 #背景圆球飘动效果的JS
 
-
 	var Spark = function () {
 	    var a = this;;
 	    this.n = document.createElement("div");
@@ -67,7 +66,7 @@ tags: [Javascript, 前端]
 	        b[i] = new Spark()
 	    }
 	});
-{:lang="javascript"}
+{:.language-javascript}
 
 
 <a href="/assets/themes/Simple_Bold_Borders/js/sparkles.js" target="_blank">Download</a>
